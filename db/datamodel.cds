@@ -52,6 +52,11 @@ context master {
         DIM_UNIT:String(2);
     }
  
+    @cds.search: {  cuid : true, 
+                    nameFirst: true,
+                    nameLast:true, 
+                    bankName:true
+    }
     entity employees: cuid {
         nameFirst: String(40);
         nameMiddle: String(40);

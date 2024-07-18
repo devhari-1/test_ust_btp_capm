@@ -58,6 +58,16 @@ module.exports = cds.service.impl( async function(){
         return await INSERT.into(POs).entries(data);
     });
 
+    this.on('CREATE', EmSetployee, async (req) => {
+        const data = req.data;
+        // Generate a UUID for the ID field
+        //data.ID = uuidv4();
+        
+        // You can add other logic here, e.g., validation
+
+        return await INSERT.into(EmployeeSet).entries(data);
+    });
+
     this.on('getOrderDefaults', async (req,res) => {
         return {
             "OVERALL_STATUS": "N"
