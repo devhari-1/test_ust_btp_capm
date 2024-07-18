@@ -9,7 +9,8 @@ service CatalogService @(path: 'CatalogService', requires: 'authenticated-user')
     entity BusinessAddressSet as projection on master.address;
    // @readonly
     entity EmployeeSet @(restrict: [
-                        { grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' },
+                        {   grant: ['CREATE'], to: 'Viewer',
+                            grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' },
                         { grant: ['WRITE'], to: 'Admin' }
                         ])
                         as projection on master.employees;
