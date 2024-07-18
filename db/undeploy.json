@@ -1,0 +1,10 @@
+[
+  "src/gen/**/*.hdbview",
+  "src/gen/**/*.hdbindex",
+  "src/gen/**/*.hdbconstraint",
+  "src/gen/**/*_drafts.hdbtable",
+  "src/gen/**/*.hdbcalculationview",
+  "src/*.hdbcds",
+  "src/defaults/RENAME_HDBCDS_TO_PLAIN.hdbprocedure",
+  "src/defaults/default_access_role.hdbrole"
+]

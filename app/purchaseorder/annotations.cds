@@ -206,17 +206,6 @@ annotate service.POs with @(
     }
  
 );
-/*annotate service.POs with {
-    PARTNER_GUID@(
-        Common : {
-            Text : PARTNER_GUID.COMPANY_NAME,
-         },
-         ValueList.entity: CatalogService.BusinessPartnerSet
-    );
-    OVERALL_STATUS @(
-        readonly,
-    )
-};*/
 annotate service.POItems with @(
  
     UI.LineItem:[

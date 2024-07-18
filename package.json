@@ -6,23 +6,29 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@cap-js/hana": "^1.1.0",
     "@sap/cds": "^7",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.7",
+    "@sap/xssec": "^4",
     "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": ">=7",
     "@sap/eslint-plugin-cds": "^3",
     "@sap/ux-specification": "^1.120.14",
     "eslint": "^9"
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-purchaseorderapp": "cds watch --open purchaseorderapp/webapp/index.html?sap-ui-xx-viewCache=false",
     "watch-purchaseorder": "cds watch --open purchaseorder/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "sapux": [
-    "app/purchaseorderapp",
     "app/purchaseorder"
-  ]
+  ],
+  "cds": {
+    "requires": {
+      "auth": "xsuaa"
+    }
+  }
 }
