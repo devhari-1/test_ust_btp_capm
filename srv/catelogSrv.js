@@ -5,6 +5,16 @@ module.exports = cds.service.impl( async function(){
     //const { v4: uuidv4 } = require('uuid');
     //const uuidv4  = require('uuid');
 
+    this.on('CREATE', EmployeeSet, async (req) => {
+        const data = req.data;
+        // Generate a UUID for the ID field
+        //data.ID = uuidv4();
+        
+        // You can add other logic here, e.g., validation
+
+        return await INSERT.into(EmployeeSet).entries(data);
+    });
+
     this.before('UPDATE', EmployeeSet, (req) => {
         var salary = parseInt(req.data.salaryAmount);
         if(salary >= 1000000){
@@ -56,16 +66,6 @@ module.exports = cds.service.impl( async function(){
         // You can add other logic here, e.g., validation
 
         return await INSERT.into(POs).entries(data);
-    });
-
-    this.on('CREATE', EmSetployee, async (req) => {
-        const data = req.data;
-        // Generate a UUID for the ID field
-        //data.ID = uuidv4();
-        
-        // You can add other logic here, e.g., validation
-
-        return await INSERT.into(EmployeeSet).entries(data);
     });
 
     this.on('getOrderDefaults', async (req,res) => {

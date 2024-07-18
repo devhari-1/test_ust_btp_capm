@@ -10,11 +10,12 @@ service CatalogService @(path: 'CatalogService', requires: 'authenticated-user')
    // @readonly
     entity EmployeeSet @(restrict: [
                         {   grant: ['CREATE'], to: 'Viewer',
-                            grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' },
+                            //grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' 
+                        },
                         { grant: ['WRITE'], to: 'Admin' }
                         ])
                         as projection on master.employees;
-    @Capabilities : { Deletable: false }
+    //@Capabilities : { Deletable: false }
 
     
     entity POs @(odata.draft.enabled: true) as projection on transaction.purchaseorder{

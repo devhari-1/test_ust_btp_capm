@@ -312,13 +312,10 @@ annotate service.ProductSet with @(
     }]
 );
 
-annotate service.POs with @(
+annotate service.EmployeeSet with @(
     Common.DefaultValuesFunction : 'getOrderDefaults',
     UI.SelectionFields:[
-        PO_ID,
-        PARTNER_GUID.COMPANY_NAME,
-        GROSS_AMOUNT,
-        OVERALL_STATUS
+        ID, nameFirst, nameLast, bankName, accountNumber, email, loginName
     ]
 );
 
